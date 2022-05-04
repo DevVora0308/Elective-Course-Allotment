@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Form Details</title>
+
+<!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="shortcut icon" href="somaiya_symbol.PNG">
+<link rel="stylesheet" href="course.css">
+
+<style>
+/* Styling for first form*/
+  #bttn
+  {
+    margin-left:90%;
+  }
+  a:hover
+  {
+    text-decoration: none;
+  }
+  .navbar-custom
+  {
+      background-color: #006080;
+  }
+  /* Modify brand and text color */
+  .navbar-custom .navbar-brand,.navbar-custom .nav-item,
+  .navbar-custom .navbar-text
+  {
+      color: white;
+      padding: 15px 30px;
+  }
+
+  .navbar-custom .navbar-brand:hover,.navbar-custom .nav-item:hover,
+  .navbar-custom .navbar-text:hover,.navbar-custom .navbar-brand:focus,
+  .navbar-custom .navbar-text:focus
+  {
+    background-color: #00bfff;
+  }
+
+  #dvCourse
+  {
+    font-size: 150%;
+    font-family: sans-serif;
+    margin-left: 20px;
+  }
+  #yes
+  {
+    font-size: 120%;
+    font-family: sans-serif;
+    margin-left: 20px;
+
+  }
+
+  .button {
+    background-color: #006080;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+}
+
+
+.split {
+  height: 90%;
+  width: 80%;
+  z-index: 1;
+  top: 27%;
+  padding-top: 20px;
+  font-size: 120%;
+
+}
+
+.left {
+    left: 0;
+    color: #006080;
+    background-color: azure;
+    padding-bottom: 30%;
+    margin-left: 15px;
+}
+
+</style>
+
+<script>
+
+  function ShowHideDiv(chkcourse)
+  {
+      var dvCourse = document.getElementById("dvcourse");
+      dvCourse.style.display = chkcourse.checked ? "block" : "none";
+  }
+
+  function ShowProof()
+  {
+      var Yes = document.getElementById("yes");
+      Yes.style.display = yes.checked ? "block" : "block";
+
+  }
+
+  function no()
+  {
+    alert("Sorry , You cannot opt for this Course.");
+  }
+
+</script>
+</head>
+
+<body>
+
+  <h1 class="brand" align="center"><a href="index.html"><img src="somaiya_symbol.PNG" height="50" width="50">  K J Somaiya College of Engineering</a></h1>
+      <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Student</a>
+      </div>
+      <ul class="nav navbar-nav">
+          <li><a class="nav-item" href="#">Welcome <?php echo $_COOKIE["username"]. "<br />";?></a></li>
+        <li><a  class="nav-item" href="studentlogout.php">Logout</a></li>
+        <li><a  class="nav-item" href="courseexp.html">Course</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="split left">
+<div class="centered">
+
+  <div style="width:500px;">
+  <table border="0" cellpadding="10" cellspacing="1" width="500" class="tblListForm">
+
+    <th class="listheader">
+      <td>Course</td>
+      <td>Experience Course</td>
+    </th>
+
+    <tr>
+      <td><input type="checkbox" id="chkcourse" onclick="ShowHideDiv(this)"/</td>
+      <td>Java Advance</td>
+      <td>Java Fundamental</td>
+    </tr>
+
+    <tr>
+      <td><input type="checkbox" id="chkcourse" onclick="ShowHideDiv(this)"/</td>
+      <td>Python Advance</td>
+      <td>Python Basics</td>
+    </tr>
+
+    <tr>
+      <td><input type="checkbox" id="chkcourse" onclick="ShowHideDiv(this)"/</td>
+      <td>Advance ML</td>
+      <td>Fundamentals of ML</td>
+    </tr>
+
+  </table>
+</div>
+<br>
+
+<div id="dvcourse" style="display: none" >
+    Do You have an Experience for selected course ?
+    <br>
+    <button class ="button" onclick="ShowProof()" />Yes</button>
+    <button class ="button" onclick="no()">No</button>
+</div>
+<br>
+
+<div id="yes" style="display: none" >
+  <form action="/action_page.php">
+    <label for="cname">Council Name:</label>
+    <input type="text" name="cname" id="cname" required ><br>
+    <label for="myfile">Upload a Proof:</label><br>
+    <input type="file" id="myfile" name="myfile"><br>
+    <input type="submit">
+  </form>
+</div>
+
+</div>
+</div>
+
+</body>
+<html>
